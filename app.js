@@ -1,4 +1,5 @@
 const express=require("express");
+require('dotenv').config()
 const path = require("path")
 const userSchema=require("./model/user.js");
 const post =require("./model/post.js");
@@ -125,4 +126,6 @@ async function isLogin(req,res,next) {
 next()
 }
 
-app.listen(3000)
+app.listen(process.env.PORT,()=>{
+    console.log(process.env.PORT)
+})
